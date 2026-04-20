@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VlogSpace</title>
+  <title>VlogScape</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="nav">
-  <h1>VlogSpace</h1>
+<header class="navbar">
+  <h1>VlogScape</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Stories</a>
-    <a href="#">About</a>
+    <a href="#explore">Explore</a>
+    <a href="#cities">Cities</a>
   </nav>
 </header>
 
 <section class="hero">
+  <div class="overlay"></div>
   <div class="hero-content">
-    <h2>Stories that feel real</h2>
-    <p>Explore thoughts, experiences and ideas crafted beautifully</p>
+    <h2>Explore Stories Around the World</h2>
+    <p>Real experiences. Real places. Captured beautifully.</p>
   </div>
 </section>
 
-<section id="posts" class="posts"></section>
+<section id="explore" class="section">
+  <h2>Latest Stories</h2>
+  <div id="posts" class="grid"></div>
+</section>
+
+<section id="cities" class="section">
+  <h2>Explore by Cities</h2>
+  <div class="city-grid">
+    <div class="city">Paris</div>
+    <div class="city">Tokyo</div>
+    <div class="city">New York</div>
+    <div class="city">Goa</div>
+  </div>
+</section>
+
+<section class="banner">
+  <h2>Capture Moments. Share Stories.</h2>
+</section>
 
 <footer>
-  <p>© 2026 VlogSpace</p>
+  <p>© 2026 VlogScape</p>
 </footer>
 
 <script src="script.js"></script>
