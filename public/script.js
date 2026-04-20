@@ -1,29 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Post</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+const posts = [
+  {
+    id: 1,
+    title: "Sunset in Goa",
+    image: "https://picsum.photos/400/300?beach",
+    content: "Golden sunsets and peaceful waves..."
+  },
+  {
+    id: 2,
+    title: "Tokyo Nights",
+    image: "https://picsum.photos/400/300?city",
+    content: "Neon lights and endless energy..."
+  },
+  {
+    id: 3,
+    title: "Paris Streets",
+    image: "https://picsum.photos/400/300?paris",
+    content: "Romantic walks and cafes..."
+  },
+  {
+    id: 4,
+    title: "Mountains of Himachal",
+    image: "https://picsum.photos/400/300?mountain",
+    content: "Cold winds and scenic beauty..."
+  }
+];
 
-<div class="post-page">
-  <img id="image" />
-  <h1 id="title"></h1>
-  <p id="content"></p>
-</div>
+const container = document.getElementById("posts");
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
+posts.forEach((post, i) => {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `
+    <img src="${post.image}">
+    <div class="card-content">
+      <h3>${post.title}</h3>
+      <p>${post.content}</p>
+    </div>
+  `;
+  container.appendChild(div);
 
-fetch(`/api/posts/${id}`)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("title").innerText = data.title;
-    document.getElementById("content").innerText = data.content;
-    document.getElementById("image").src = data.image;
-  });
-</script>
-
-</body>
-</html>
+  setTimeout(() => div.classList.add("visible"), i * 200);
+});
